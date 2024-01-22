@@ -122,7 +122,15 @@ pnpm start
 ```shell
 pnpm run lint
 ```
-### 5) 단위 테스트 실행
+### 5) git hook 설치하기
+```shell
+# git hook 에 설치할 스크립트에 실행(execute) 권한이 없으면 hook 이 트리거 되어도 동작하지 않습니다.
+chmod +x .husky/* 
+
+# husky 를 이용하여 git hook 을 설치합니다.
+pnpm run prepare
+```
+### 6) 단위 테스트 실행
 ```shell
 # CI 환경 파이프라인에서 실행 
 pnpm run test
@@ -130,7 +138,7 @@ pnpm run test
 # 개발 환경 코드 수정 사항 실시간 반영하는 watch 모드 실행
 pnpm run test:watch
 ```
-### 6) 통합 테스트 실행
+### 7) 통합 테스트 실행
 ```shell
 # CI 환경 파이프라인에서 실행
 pnpm run e2e:headless
@@ -138,11 +146,11 @@ pnpm run e2e:headless
 # 개발 환경 코드 수정 사항 실시간 반영하는 서버 실행
 pnpm run e2e
 ```
-### 7) 코드 내 주석들을 html 형식 문서로 내보내기
+### 8) 코드 내 주석들을 html 형식 문서로 내보내기
 ```shell
 pnpm run typedoc
 ```
-### 8) Storybook 실행하기
+### 9) Storybook 실행하기
 ```shell
 # html 형식 문서로 내보내기
 pnpm run build-storybook 
