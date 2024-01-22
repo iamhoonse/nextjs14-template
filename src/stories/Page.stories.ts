@@ -26,8 +26,7 @@ export const LoggedIn: Story = {
     const canvas = within(canvasElement);
     const loginButton = canvas.getByRole("button", { name: /Log in/i });
     await expect(loginButton).toBeInTheDocument();
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    await userEvent.click(loginButton); // fixme: pnpm 아니어도 위의 ESLint 규칙 억제가 필요 없도록 개선해야 함
+    await userEvent.click(loginButton);
     await expect(loginButton).not.toBeInTheDocument();
 
     const logoutButton = canvas.getByRole("button", { name: /Log out/i });
